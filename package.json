@@ -1,9 +1,9 @@
 {
     "name": "msbuild-solution-syntax",
-	"publisher": "deitry",
-	"repository": {
-		"url": "https://github.com/deitry/vscode-msbuild-solution-syntax"
-	},
+    "publisher": "deitry",
+    "repository": {
+        "url": "https://github.com/deitry/vscode-msbuild-solution-syntax"
+    },
     "displayName": "solution-syntax",
     "description": "Syntax highlighting for `.sln` files",
     "version": "0.0.1",
@@ -13,22 +13,34 @@
     "categories": [
         "Programming Languages"
     ],
-	"keywords": [
-		"msbuild",
-		"solution",
-		"sln"
-	],
+    "keywords": [
+        "msbuild",
+        "solution",
+        "sln"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "msbuild-solution",
-            "aliases": ["MSBuild Solution", "msbuild-solution"],
-            "extensions": [".sln"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "msbuild-solution",
-            "scopeName": "source.solution",
-            "path": "./syntaxes/msbuild-solution.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "msbuild-solution",
+                "aliases": [
+                    "MSBuild Solution",
+                    "msbuild-solution"
+                ],
+                "extensions": [
+                    ".sln"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "msbuild-solution",
+                "scopeName": "source.solution",
+                "path": "./syntaxes/msbuild-solution.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "esbuild": "^0.14.23"
     }
 }
