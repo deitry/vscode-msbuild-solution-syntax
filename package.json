@@ -1,0 +1,25 @@
+{
+    "name": "solution-syntax",
+    "displayName": "solution-syntax",
+    "description": "Syntax highlighting for `.sln` files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "msbuild-solution",
+            "aliases": ["MSBuild Solution", "msbuild-solution"],
+            "extensions": [".sln"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "msbuild-solution",
+            "scopeName": "source.solution",
+            "path": "./syntaxes/msbuild-solution.tmLanguage.json"
+        }]
+    }
+}

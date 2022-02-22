@@ -1,0 +1,104 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MSBuild Solution",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#header"
+		},
+		{
+			"include": "#guids"
+		},
+		{
+			"begin": "(^[ \\t]+)?(?=#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.properties.alt"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.properties.alt"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.number-sign.properties.alt"
+				}
+			]
+		}
+	],
+	"repository": {
+		"header": {
+			"patterns": [
+				{
+					"name": "header.msbuild-solution",
+					"match": "\\b(Microsoft Visual Studio Solution File\\, Format Version .*$)\\b"
+				},
+				{
+					"name": "constant.language.msbuild-solution",
+					"match": "\\b^((Minimum)?VisualStudioVersion)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.msbuild-solution",
+					"match": "\\b((End)?(Global(Section)?)|(End)?Project)\\b"
+				},
+				{
+					"name": "keyword.operator.assignment.msbuild-solution",
+					"match": "(=)"
+				},
+				{
+					"name": "punctuation.separator.comma.msbuild-solution",
+					"match": "(,)"
+				}
+			]
+		},
+		"guids": {
+			"patterns": [
+				{
+					"begin": "(\\{)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.curlybrace.open.msbuild-solution"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.numeric.guid.msbuild-solution",
+							"match": "([0-9A-Fa-f]{8}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{12})"
+						}
+					],
+					"end": "(\\})",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.curlybrace.close.msbuild-solution"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.msbuild-solution",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"include": "#guids"
+				}
+			]
+		}
+	},
+	"scopeName": "source.solution"
+}
