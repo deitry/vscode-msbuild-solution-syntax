@@ -18,9 +18,6 @@
 		"solution",
 		"sln"
 	],
-	"activationEvents": [
-		"onLanguage:mabuild-solution"
-	],
     "contributes": {
         "languages": [{
             "id": "msbuild-solution",
